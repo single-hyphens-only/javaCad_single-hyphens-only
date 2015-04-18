@@ -1,6 +1,6 @@
 // Create a cube
-CSG cube = new Cube(20).toCSG()
+CSG cube = new Cube(40).toCSG()
 //create a sphere
-CSG sphere = new Sphere(12.5).toCSG()
+CSG sphere = new Sphere(20.5).toCSG()
 //perform a difference
 cube.difference(sphere)
