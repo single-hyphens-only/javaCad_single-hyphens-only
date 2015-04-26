@@ -12,6 +12,6 @@ CSG cubeIntersectSphere = cube.intersect(sphere);
 // translate geometries to prevent overlapping 
 CSG union = cube.
         union(sphere.transformed(Transform.unity().translateX(size*1.5))).
-        union(cubePlusSphere.transformed(Transform.unity().translateX(size*2.5))).
-        union(cubeMinusSphere.transformed(Transform.unity().translateX(size*3.5))).
-        union(cubeIntersectSphere.transformed(Transform.unity().translateX(size*4.5)));
+        union(cubePlusSphere.transformed(Transform.unity().translateX(size*3))).
+        union(cubeMinusSphere.transformed(Transform.unity().translateX(size*4))).
+        union(cubeIntersectSphere.transformed(Transform.unity().translateX(size*5)));
