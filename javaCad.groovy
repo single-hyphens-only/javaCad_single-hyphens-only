@@ -8,7 +8,6 @@ CSG sphere = new Sphere(size/20*12.5).toCSG()
 CSG cubePlusSphere = cube.union(sphere);
 CSG cubeMinusSphere = cube.difference(sphere);
 CSG cubeIntersectSphere = cube.intersect(sphere);
-
 // translate geometries to prevent overlapping 
 CSG union = cube.
         union(sphere.transformed(Transform.unity().translateY(size*1.5))).
