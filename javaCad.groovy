@@ -1,5 +1,5 @@
 // Create a cube
-double size =90;
+double size =40;
 CSG cube = new Cube(size).toCSG()
 //create a sphere
 CSG sphere = new Sphere(size/20*12.5).toCSG()
