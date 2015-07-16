@@ -16,4 +16,3 @@ CSG union = cube.
         union(cubePlusSphere.transformed(Transform.unity().translateY(size*3))).
         union(cubeMinusSphere.transformed(Transform.unity().translateY(size*5))).
         union(cubeIntersectSphere.transformed(Transform.unity().translateY(size*7)));
-return STL.file("/home/hephaestus/bowler-workspace/hxt900-servo.stl");
