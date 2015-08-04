@@ -5,9 +5,9 @@ double size =40;
 CSG cube = new Cube(size).toCSG()
 //create a sphere
 CSG sphere = new Sphere(size/20*12.5).toCSG()
-CSG cylinder = new Cylinder(	100,// Radius
+CSG cylinder = new Cylinder(	100, // Radius
 				200, // Height
-			         (int)20//resolution
+			         (int)20 //resolution
 			         ).toCSG()
 //perform a difference
 // perform union, difference and intersection
