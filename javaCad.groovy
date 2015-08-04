@@ -8,7 +8,8 @@ CSG cube = new Cube(	size,// X dimention
 			).toCSG()
 //create a sphere
 CSG sphere = new Sphere(size/20*12.5).toCSG()
-CSG cylinder = new Cylinder(	100, // Radius
+CSG cylinder = new Cylinder(	100, // Radius at the top
+				100, // Radius at the bottom
 				200, // Height
 			         (int)20 //resolution
 			         ).toCSG()
