@@ -2,7 +2,9 @@
 import eu.mihosoft.vrl.v3d.STL;
 
 double size =40;
-CSG cube = new Cube(size,size,size).toCSG()
+CSG cube = new Cube(	size,
+			size,
+			size).toCSG()
 //create a sphere
 CSG sphere = new Sphere(size/20*12.5).toCSG()
 CSG cylinder = new Cylinder(	100, // Radius
