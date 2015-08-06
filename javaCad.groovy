@@ -13,6 +13,12 @@ CSG cylinder = new Cylinder(	100, // Radius at the top
 				200, // Height
 			         (int)20 //resolution
 			         ).toCSG()
+CSG polygon = Extrude.points(new Vector3d(0, 0, 5),// This is the  extrusion depth
+                new Vector3d(0,0),// All values after this are the points in the polygon
+                new Vector3d(10,0),// Bottom right corner
+                new Vector3d(7,5),// upper right corner
+                new Vector3d(3,5)// upper left corner
+        );		         
 //perform a difference
 // perform union, difference and intersection
 CSG cubePlusSphere = cube.union(sphere);
