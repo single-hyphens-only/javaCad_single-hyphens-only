@@ -14,7 +14,7 @@ CSG roundedCube = new RoundedCube(	size,// X dimention
 				)
 				.cornerRadius(size/10)
 				.toCSG()
-CSG text = Text.text(10.0, "H", new Font("Helvedica", Font.PLAIN, 18))
+CSG text = Text.text(size, "H", new Font("Helvedica", Font.PLAIN, size))
 					
 //create a sphere
 CSG sphere = new Sphere(size/20*12.5).toCSG()
