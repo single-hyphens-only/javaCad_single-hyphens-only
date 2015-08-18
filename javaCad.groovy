@@ -43,5 +43,5 @@ CSG union = cube.union(
         cylinder.movex(size*3),
         polygon.movex(size*5),
         roundedCube.movex(size*8),
-        text.movex(size*12)
+        text.movey(size*9)
         );
