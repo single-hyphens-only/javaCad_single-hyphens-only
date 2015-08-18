@@ -6,6 +6,13 @@ CSG cube = new Cube(	size,// X dimention
 			size,// Y dimention
 			size//  Z dimention
 			).toCSG()
+CSG roundedCube = RoundedCube(	size,// X dimention
+				size,// Y dimention
+				size//  Z dimention
+				)
+				.cornerRadius(size/10)
+				.toCSG()
+					
 //create a sphere
 CSG sphere = new Sphere(size/20*12.5).toCSG()
 CSG cylinder = new Cylinder(	size/4, // Radius at the top
@@ -31,5 +38,6 @@ CSG union = cube.union(
         cubeMinusSphere.movey(size*5),
         cubeIntersectSphere.movey(size*7),
         cylinder.movex(size*3),
-        polygon.movex(size*5)
+        polygon.movex(size*5),
+        roundedCube.movex(size*7)
         );
