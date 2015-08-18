@@ -7,7 +7,7 @@ CSG cube = new Cube(	size,// X dimention
 			size,// Y dimention
 			size//  Z dimention
 			).toCSG()
-CSG roundedCube = RoundedCube(	size,// X dimention
+CSG roundedCube = new RoundedCube(	size,// X dimention
 				size,// Y dimention
 				size//  Z dimention
 				)
