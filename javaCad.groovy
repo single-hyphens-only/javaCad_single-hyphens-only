@@ -29,7 +29,7 @@ CSG union = cube.union(
 	sphere.movey(size*1.5),
         cubePlusSphere.movey(size*3),
         cubeMinusSphere.movey(size*5),
-        cubeIntersectSphere.movey(size*7)
+        cubeIntersectSphere.movey(size*7),
         cylinder.movex(size*3),
         polygon.movex(size*5)
         );
