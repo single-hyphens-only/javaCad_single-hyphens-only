@@ -1,5 +1,6 @@
 // Create a cube
 import eu.mihosoft.vrl.v3d.STL;
+import eu.mihosoft.vrl.v3d.RoundedCube;
 
 double size =40;
 CSG cube = new Cube(	size,// X dimention
