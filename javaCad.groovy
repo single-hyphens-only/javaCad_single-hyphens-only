@@ -14,7 +14,6 @@ CSG roundedCube = new RoundedCube(	size,// X dimention
 				)
 				.cornerRadius(size/10)
 				.toCSG()
-CSG text = Text.text(size, "H", new Font("Helvedica", Font.PLAIN, (int)size))
 					
 //create a sphere
 CSG sphere = new Sphere(size/20*12.5).toCSG()
@@ -42,6 +41,5 @@ CSG union = cube.union(
         cubeIntersectSphere.movey(size*7),
         cylinder.movex(size*3),
         polygon.movex(size*5),
-        roundedCube.movex(size*8),
-        text.movey(size*9)
+        roundedCube.movex(size*8)
         );
