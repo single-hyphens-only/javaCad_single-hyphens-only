@@ -1,6 +1,7 @@
 // Create a cube
 import eu.mihosoft.vrl.v3d.STL;
 import eu.mihosoft.vrl.v3d.RoundedCube;
+import eu.mihosoft.vrl.v3d.Text;
 
 double size =40;
 CSG cube = new Cube(	size,// X dimention
@@ -13,6 +14,7 @@ CSG roundedCube = new RoundedCube(	size,// X dimention
 				)
 				.cornerRadius(size/10)
 				.toCSG()
+CSG text = Text.text(10.0, "Hello", new Font("Helvedica", Font.PLAIN, 18))
 					
 //create a sphere
 CSG sphere = new Sphere(size/20*12.5).toCSG()
