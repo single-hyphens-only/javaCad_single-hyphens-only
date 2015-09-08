@@ -34,7 +34,7 @@ CSG cubePlusSphere = cube.union(sphere);
 CSG cubeMinusSphere = cube.difference(sphere);
 CSG cubeIntersectSphere = cube.intersect(sphere);
 // translate geometries to prevent overlapping 
-CSG union = cube.union(
+return  cube.union(
 	sphere.movey(size*1.5),
         cubePlusSphere.movey(size*3),
         cubeMinusSphere.movey(size*5),
