@@ -60,7 +60,7 @@ cube.setColor(javafx.scene.paint.Color.CYAN);
 // this can be a shell or printer keepaway
 // this increases the size by a spacific measurment in mm
 cubeIntersectSphereBigger = cubeIntersectSphere
-				.makeKeepaway(10.0)
+				.makeKeepaway((double)10.0)
 				.movez(size*1.5)
 // Load an STL file from a git repo
 // Loading a local file also works here
