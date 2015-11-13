@@ -48,6 +48,10 @@ cubeIntersectSphere = cubeIntersectSphere
 //set colors
 cube.setColor(javafx.scene.paint.Color.CYAN);
 
+//make a keepaway shape 
+// this can be a shell or printer keepaway
+//cubeIntersectSphere = cubeIntersectSphere.makeKeepaway(10)
+
 //collection of parts
 ArrayList<CSG> parts = new ArrayList<CSG>();
 
