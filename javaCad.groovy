@@ -35,8 +35,16 @@ CSG cubeMinusSphere = cube.difference(sphere);
 CSG cubeIntersectSphere = cube.intersect(sphere);
 //Move and rotate opperations
 //cubeIntersectSphere = cubeIntersectSphere.move(1,2,3);
+cubeIntersectSphere = cubeIntersectSphere
+			.movex(1)
+			.movey(2)
+			.movez(3)
 //rotate
 //cubeIntersectSphere = cubeIntersectSphere.rot(15,20,30);
+cubeIntersectSphere = cubeIntersectSphere
+			.rotx(15)
+			.roty(20)
+			.rotz(30)
 //set colors
 cube.setColor(javafx.scene.paint.Color.CYAN);
 
