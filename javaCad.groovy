@@ -34,9 +34,9 @@ CSG cubePlusSphere = cube.union(sphere);
 CSG cubeMinusSphere = cube.difference(sphere);
 CSG cubeIntersectSphere = cube.intersect(sphere);
 //Move and rotate opperations
-cubeIntersectSphere = cubeIntersectSphere.move(1,2,3);
+//cubeIntersectSphere = cubeIntersectSphere.move(1,2,3);
 //rotate
-cubeIntersectSphere = cubeIntersectSphere.rot(15,20,30);
+//cubeIntersectSphere = cubeIntersectSphere.rot(15,20,30);
 //set colors
 cubeIntersectSphere.setColor(Color.CYAN);
 
