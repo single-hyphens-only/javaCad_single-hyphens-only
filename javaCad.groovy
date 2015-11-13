@@ -33,13 +33,22 @@ CSG polygon = Extrude.points(new Vector3d(0, 0, size),// This is the  extrusion 
 CSG cubePlusSphere = cube.union(sphere);
 CSG cubeMinusSphere = cube.difference(sphere);
 CSG cubeIntersectSphere = cube.intersect(sphere);
-// translate geometries to prevent overlapping 
-return  cube.union(
-	sphere.movey(size*1.5),
-        cubePlusSphere.movey(size*3),
-        cubeMinusSphere.movey(size*5),
-        cubeIntersectSphere.movey(size*7),
-        cylinder.movex(size*3),
-        polygon.movex(size*5),
-        roundedCube.movex(size*8)
-        );
+//Move and rotate opperations
+cubeIntersectSphere = cubeIntersectSphere.move(1,2,3);
+//rotate
+cubeIntersectSphere = cubeIntersectSphere.rot(15,20,30);
+//set colors
+cubeIntersectSphere.setColor(Color.CYAN);
+
+//collection of parts
+ArrayList<CSG> parts = new ArrayList<CSG>();
+
+parts.add(cube)
+parts.add(sphere.movey(size*1.5))
+parts.add(cubePlusSphere.movey(size*3))
+parts.add(cubeMinusSphere.movey(size*5))
+parts.add(cubeIntersectSphere.movey(size*7))
+parts.add(cylinder.movex(size*3))
+parts.add(polygon.movex(size*5))
+parts.add(roundedCube.movex(size*8))
+return parts;
