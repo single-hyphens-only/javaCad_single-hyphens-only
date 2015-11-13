@@ -36,9 +36,9 @@ CSG cubeIntersectSphere = cube.intersect(sphere);
 
 //Scale lets you increas or decrease the sise by a scale factor
 CSG cubeMinusSphereSmall = cubeMinusSphere
-				.scalex(.5)
-				.scaley(.5)
-				.scalez(.5)
+				.scalex(0.5)
+				.scaley(0.5)
+				.scalez(0.5)
 				.movez(size*1.5)
 
 //Move and rotate opperations
