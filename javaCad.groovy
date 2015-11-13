@@ -33,14 +33,22 @@ CSG polygon = Extrude.points(new Vector3d(0, 0, size),// This is the  extrusion 
 CSG cubePlusSphere = cube.union(sphere);
 CSG cubeMinusSphere = cube.difference(sphere);
 CSG cubeIntersectSphere = cube.intersect(sphere);
+
+//Scale lets you increas or decrease the sise by a scale factor
+CSG cubeMinusSphereSmall = cubeMinusSphere
+				.scalex(.5)
+				.scaley(.5)
+				.scalez(.5)
+				.movez(size*1.5)
+
 //Move and rotate opperations
-//cubeIntersectSphere = cubeIntersectSphere.move(1,2,3);
+//cubeIntersectSphere = cubeIntersectSphere.move(1,2,3);// vector notation
 cubeIntersectSphere = cubeIntersectSphere
 			.movex(1)
 			.movey(2)
 			.movez(3)
 //rotate
-//cubeIntersectSphere = cubeIntersectSphere.rot(15,20,30);
+//cubeIntersectSphere = cubeIntersectSphere.rot(15,20,30);// vector notation
 cubeIntersectSphere = cubeIntersectSphere
 			.rotx(15)
 			.roty(20)
@@ -50,7 +58,10 @@ cube.setColor(javafx.scene.paint.Color.CYAN);
 
 //make a keepaway shape 
 // this can be a shell or printer keepaway
-//cubeIntersectSphere = cubeIntersectSphere.makeKeepaway(10)
+// tis increases the size by a spacific measurment in mm
+cubeIntersectSphereBigger = cubeIntersectSphere
+				.makeKeepaway(10)
+				.movez(size*1.5)
 
 //collection of parts
 ArrayList<CSG> parts = new ArrayList<CSG>();
@@ -59,7 +70,9 @@ parts.add(cube)
 parts.add(sphere.movey(size*1.5))
 parts.add(cubePlusSphere.movey(size*3))
 parts.add(cubeMinusSphere.movey(size*5))
+parts.add(cubeMinusSphereSmall.movey(size*5))
 parts.add(cubeIntersectSphere.movey(size*7))
+parts.add(cubeIntersectSphereBigger.movey(size*7))
 parts.add(cylinder.movex(size*3))
 parts.add(polygon.movex(size*5))
 parts.add(roundedCube.movex(size*8))
