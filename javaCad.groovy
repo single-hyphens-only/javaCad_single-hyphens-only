@@ -38,7 +38,7 @@ CSG cubeIntersectSphere = cube.intersect(sphere);
 //rotate
 //cubeIntersectSphere = cubeIntersectSphere.rot(15,20,30);
 //set colors
-cubeIntersectSphere.setColor(Color.CYAN);
+cubeIntersectSphere.setColor(javafx.scene.paint.Color.CYAN);
 
 //collection of parts
 ArrayList<CSG> parts = new ArrayList<CSG>();
