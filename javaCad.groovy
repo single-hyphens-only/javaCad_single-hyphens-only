@@ -58,7 +58,7 @@ cube.setColor(javafx.scene.paint.Color.CYAN);
 
 //make a keepaway shape 
 // this can be a shell or printer keepaway
-// tis increases the size by a spacific measurment in mm
+// this increases the size by a spacific measurment in mm
 cubeIntersectSphereBigger = cubeIntersectSphere
 				.makeKeepaway(10)
 				.movez(size*1.5)
