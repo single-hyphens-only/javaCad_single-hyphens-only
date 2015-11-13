@@ -9,6 +9,7 @@ CSG cube = new Cube(	size,// X dimention
 			size,// Y dimention
 			size//  Z dimention
 			).toCSG()
+//create a rounded cube
 CSG roundedCube = new RoundedCube(	size,// X dimention
 				size,// Y dimention
 				size//  Z dimention
@@ -18,11 +19,13 @@ CSG roundedCube = new RoundedCube(	size,// X dimention
 					
 //create a sphere
 CSG sphere = new Sphere(size/20*12.5).toCSG()
+//create a Cylinder
 CSG cylinder = new Cylinder(	size/4, // Radius at the top
 				size/2, // Radius at the bottom
 				size, // Height
 			         (int)80 //resolution
 			         ).toCSG()
+//create an extruded polygon
 CSG polygon = Extrude.points(new Vector3d(0, 0, size),// This is the  extrusion depth
                 new Vector3d(0,0),// All values after this are the points in the polygon
                 new Vector3d(size*2,0),// Bottom right corner
