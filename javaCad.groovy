@@ -64,13 +64,13 @@ cubeIntersectSphereBigger = cubeIntersectSphere
 				.movez(size*1.5)
 // Load an STL file from a git repo
 // Loading a local file also works here
-File servo = ScriptingEngine.fileFromGit(
+File servoFile = ScriptingEngine.fileFromGit(
 	"https://github.com/NeuronRobotics/BowlerStudioVitamins.git",
 	"BowlerStudioVitamins/stl/servo/smallservo.stl");
 // Load the .CSG from the disk and cache it in memory
-CSG servo  = Vitamins.get(servo);
+CSG servo  = Vitamins.get(servoFile);
 // Alternantly you can load the file without caching it
-//CSG servo  = STL.file(servo.toPath());
+//CSG servo  = STL.file(servoFile.toPath());
 servo=servo
 	.movez(size*1.5);
 
