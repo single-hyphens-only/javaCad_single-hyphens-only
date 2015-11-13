@@ -62,11 +62,23 @@ cube.setColor(javafx.scene.paint.Color.CYAN);
 cubeIntersectSphereBigger = cubeIntersectSphere
 				.makeKeepaway(10.0)
 				.movez(size*1.5)
+// Load an STL file from a git repo
+// Loading a local file also works here
+File servo = ScriptingEngine.fileFromGit(
+	"https://github.com/NeuronRobotics/BowlerStudioVitamins.git",
+	"BowlerStudioVitamins/stl/servo/smallservo.stl");
+// Load the .CSG from the disk and cache it in memory
+CSG servo  = Vitamins.get(servo);
+// Alternantly you can load the file without caching it
+//CSG servo  = STL.file(servo.toPath());
+servo=servo
+	.movez(size*1.5);
 
 //collection of parts
 ArrayList<CSG> parts = new ArrayList<CSG>();
 
 parts.add(cube)
+parts.add(servo)
 parts.add(sphere.movey(size*1.5))
 parts.add(cubePlusSphere.movey(size*3))
 parts.add(cubeMinusSphere.movey(size*5))
