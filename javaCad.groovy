@@ -2,6 +2,7 @@
 import eu.mihosoft.vrl.v3d.STL;
 import eu.mihosoft.vrl.v3d.RoundedCube;
 import eu.mihosoft.vrl.v3d.Text;
+import com.neuronrobotics.bowlerstudio.vitamins.*;
 
 double size =40;
 CSG cube = new Cube(	size,// X dimention
