@@ -90,6 +90,6 @@ parts.add(cubeMinusSphereSmall.movey(size*5))
 parts.add(cubeIntersectSphere.movey(size*7))
 parts.add(cubeIntersectSphereBigger.movey(size*7))
 parts.add(cylinder.movex(size*3))
-parts.add(polygon.movex(size*5))
+parts.add(polygon.movex(size*4.5))
 parts.add(roundedCube.movex(size*8))
 return parts;
