@@ -1,10 +1,10 @@
-// Create a cube
 import eu.mihosoft.vrl.v3d.STL;
 import eu.mihosoft.vrl.v3d.RoundedCube;
 import eu.mihosoft.vrl.v3d.Text;
 import com.neuronrobotics.bowlerstudio.vitamins.*;
 
 double size =40;
+// Create a cube
 CSG cube = new Cube(	size,// X dimention
 			size,// Y dimention
 			size//  Z dimention
