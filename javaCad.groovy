@@ -7,6 +7,8 @@ ArrayList<CSG> makeSamples(){
 	double myStartSize = 40;
 	LengthParameter size 		= new LengthParameter("size",myStartSize,[120.0,1.0])
 	LengthParameter smallerSize 		= new LengthParameter("smaller size",myStartSize/20*12.5,[120.0,1.0])
+	// force a value to override the database loaded value
+	smallerSize.setMM(size.getMM()/20*12.5);
 	// Create a cube
 	CSG cube = new Cube(	size,// X dimention
 				size,// Y dimention
@@ -95,8 +97,14 @@ ArrayList<CSG> makeSamples(){
 	parts.add(cylinder.movex(size.getMM()*3))
 	parts.add(polygon.movex(size.getMM()*5))
 	parts.add(roundedCube.movex(size.getMM()*8))
-	for(CSG part:parts){
-		part.setRegenerate({ makeSamples()})
+	for(int i=0;i<parts.size();i++){
+		CSG part=parts.get(i)
+		int myIndex=i;
+		part.setRegenerate({ 
+			makeSamples().get(myIndex)
+		})
+		.setParameter(size)
 	}
 	return parts
 }
+return makeSamples()
