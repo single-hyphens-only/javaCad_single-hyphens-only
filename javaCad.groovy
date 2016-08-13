@@ -93,7 +93,7 @@ ArrayList<CSG> makeSamples(){
 		for(String s:Vitamins.listVitaminSizes(type) ){
 	
 			HashMap<String, Object>  vitaminData = Vitamins.getConfiguration( type,s)
-			println "\tSize = "+size+" "+vitaminData
+			println "\tSize = "+s+" "+vitaminData
 		}
 		
 		if(script!=null){
