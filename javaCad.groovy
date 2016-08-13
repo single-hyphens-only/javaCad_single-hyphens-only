@@ -106,25 +106,20 @@ class SampleMaker implements IParameterChanged{//collection of parts
 				println "Loading "+type+" "+Vitamins
 				.listVitaminSizes(type)
 				.get(0)
-				CSG vitaminFromScript = Vitamins
-				.get( type,
-				Vitamins
-				.listVitaminSizes(type)
-				.get(0))
+				ArrayList<String> options = Vitamins.listVitaminSizes(type);
+				StringParameter typParam = new StringParameter(	type+" Default",
+														options.get(0),
+														options)
+				CSG vitaminFromScript = Vitamins.get( type,typParam.getStrValue())
 									.movex(-size.getMM()*2)
 									.movey(size.getMM()*numVits)
+				CSGDatabase.addParameterListener(typParam.getName(),this);
 				numVits++;		
 				if(vitaminFromScript!=null)
 					parts.add(vitaminFromScript)
 			}else
 				println "ERROR no script for "+type
-		}
-		for(int i=0;i<parts.size();i++){
-			for(String p:parts.get(i) .getParameters()){
-				CSGDatabase.addParameterListener(p,this);
-			}
-		}
-		
+		}		
 		
 		parts.add(cube)
 		parts.add(servo)
