@@ -2,7 +2,7 @@ import eu.mihosoft.vrl.v3d.STL;
 import eu.mihosoft.vrl.v3d.RoundedCube;
 import com.neuronrobotics.bowlerstudio.vitamins.*;
 import eu.mihosoft.vrl.v3d.parametrics.*;
-
+import com.neuronrobotics.bowlerstudio.vitamins.Vitamins;
 ArrayList<CSG> makeSamples(){
 	double myStartSize = 40;
 	LengthParameter size 		= new LengthParameter("size",myStartSize,[120.0,1.0])
@@ -85,6 +85,29 @@ ArrayList<CSG> makeSamples(){
 	
 	//collection of parts
 	ArrayList<CSG> parts = new ArrayList<CSG>();
+
+	int numVits = 0;
+	for(String type: Vitamins.listVitaminTypes()){
+		String script = Vitamins.getMeta(type).get("scriptGit")
+		println "Type = "+type+" Loading script from "+ script
+		for(String s:Vitamins.listVitaminSizes(type) ){
+	
+			HashMap<String, Object>  vitaminData = Vitamins.getConfiguration( type,s)
+			println "\tSize = "+size+" "+vitaminData
+		}
+		
+		if(script!=null){
+			// Grab the first vitamin from the list and load that
+			CSG vitaminFromScript = Vitamins.get( type,Vitamins.listVitaminSizes(type).get(0))
+								.movex(-size.getMM()*2)
+								.movey(size.getMM()*numVits)
+			numVits++;		
+			
+			parts.add(vitaminFromScript)
+		}else
+			println "ERROR no script for "+type
+	}
+
 	
 	parts.add(cube)
 	parts.add(servo)
