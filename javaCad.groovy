@@ -5,11 +5,12 @@ import eu.mihosoft.vrl.v3d.parametrics.*;
 import com.neuronrobotics.bowlerstudio.vitamins.Vitamins;
 class SampleMaker implements IParameterChanged{//collection of parts
 	ArrayList<CSG> parts = null;
+	boolean loading=false;
 	ArrayList<CSG> makeSamples(){
 		if(parts !=null){
 			return parts
 		}
-		
+		loading=true;
 		double myStartSize = 40;
 		LengthParameter size 		= new LengthParameter("size",myStartSize,[120.0,1.0])
 		LengthParameter smallerSize 		= new LengthParameter("smaller size",myStartSize/20*12.5,[120.0,1.0])
@@ -142,6 +143,7 @@ class SampleMaker implements IParameterChanged{//collection of parts
 
 			
 		}
+		loading=false;
 		return parts
 	}
 	/**
@@ -152,6 +154,8 @@ class SampleMaker implements IParameterChanged{//collection of parts
 	 HashMap<String,String> lastValue = new HashMap<>()
 	public void parameterChanged(String name, Parameter p){
 		if(p.getStrValue()==null&& p.getValue()==null)
+			return
+		if(loading)
 			return
 		if(lastValue.get(name)!=null )
 			if(p.getStrValue().contains(lastValue.get(name)))
