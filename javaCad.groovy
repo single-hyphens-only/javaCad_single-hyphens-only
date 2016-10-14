@@ -21,6 +21,8 @@ class SampleMaker implements IParameterChanged{//collection of parts
 					size,// Y dimention
 					size//  Z dimention
 					).toCSG()
+					
+		BowlerStudioController.addCsg(cube)//displays just this item
 		//create a rounded cube
 		CSG roundedCube = new RoundedCube(	size,// X dimention
 						size,// Y dimention
@@ -108,16 +110,25 @@ class SampleMaker implements IParameterChanged{//collection of parts
 				.listVitaminSizes(type)
 				.get(0)
 				ArrayList<String> options = Vitamins.listVitaminSizes(type);
+				CSG lastPart;
+				if(parts.size()>0)
+					lastPart= parts.get(parts.size()-1)
+				else
+					lastPart = cube
 				StringParameter typParam = new StringParameter(	type+" Default",
 														options.get(0),
 														options)
 				CSG vitaminFromScript = Vitamins.get( type,typParam.getStrValue())
+									.toXMax()
 									.movex(-size.getMM()*2)
-									.movey(size.getMM()*numVits)
+									.toYMin()
+									.movey(lastPart.getMaxY()+5)
 				CSGDatabase.addParameterListener(typParam.getName(),this);
 				numVits++;		
-				if(vitaminFromScript!=null)
+				if(vitaminFromScript!=null){
 					parts.add(vitaminFromScript)
+					BowlerStudioController.addCsg(vitaminFromScript)//displays just this item
+				}
 			}else
 				println "ERROR no script for "+type
 		}		
