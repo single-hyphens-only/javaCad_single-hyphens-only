@@ -22,7 +22,7 @@ class SampleMaker implements IParameterChanged{//collection of parts
 					size//  Z dimention
 					).toCSG()
 					
-		BowlerStudioController.addCsg(cube)//displays just this item
+		//BowlerStudioController.addCsg(cube)//displays just this item
 		//create a rounded cube
 		CSG roundedCube = new RoundedCube(	size,// X dimention
 						size,// Y dimention
@@ -127,7 +127,7 @@ class SampleMaker implements IParameterChanged{//collection of parts
 				numVits++;		
 				if(vitaminFromScript!=null){
 					parts.add(vitaminFromScript)
-					BowlerStudioController.addCsg(vitaminFromScript)//displays just this item
+					//BowlerStudioController.addCsg(vitaminFromScript)//displays just this item
 				}
 			}else
 				println "ERROR no script for "+type
