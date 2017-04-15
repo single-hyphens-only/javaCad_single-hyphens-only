@@ -119,15 +119,20 @@ class SampleMaker implements IParameterChanged{//collection of parts
 														options.get(0),
 														options)
 				CSG vitaminFromScript = Vitamins.get( type,typParam.getStrValue())
-									.toXMax()
-									.movex(-size.getMM()*2)
-									.toYMin()
-									.movey(lastPart.getMaxY()+5)
-				CSGDatabase.addParameterListener(typParam.getName(),this);
-				numVits++;		
 				if(vitaminFromScript!=null){
-					parts.add(vitaminFromScript)
-					//BowlerStudioController.addCsg(vitaminFromScript)//displays just this item
+					vitaminFromScript=vitaminFromScript
+										.toXMax()
+										.movex(-size.getMM()*2)
+										.toYMin()
+										.movey(lastPart.getMaxY()+5)
+					CSGDatabase.addParameterListener(typParam.getName(),this);
+					numVits++;		
+					if(vitaminFromScript!=null){
+						parts.add(vitaminFromScript)
+						//BowlerStudioController.addCsg(vitaminFromScript)//displays just this item
+					}
+				}else{
+					println type+" "+typParam.getStrValue()+" Failed "
 				}
 			}else
 				println "ERROR no script for "+type
