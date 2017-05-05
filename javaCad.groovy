@@ -1,8 +1,4 @@
-import eu.mihosoft.vrl.v3d.STL;
-import eu.mihosoft.vrl.v3d.RoundedCube;
-import com.neuronrobotics.bowlerstudio.vitamins.*;
-import eu.mihosoft.vrl.v3d.parametrics.*;
-import com.neuronrobotics.bowlerstudio.vitamins.Vitamins;
+
 class SampleMaker implements IParameterChanged{//collection of parts
 	ArrayList<CSG> parts = null;
 	boolean loading=false;
