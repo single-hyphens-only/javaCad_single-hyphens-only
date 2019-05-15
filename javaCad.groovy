@@ -10,6 +10,8 @@ class SampleMaker implements IParameterChanged{//collection of parts
 		double myStartSize = 40;
 		LengthParameter size 		= new LengthParameter("size",myStartSize,[120.0,1.0])
 		LengthParameter smallerSize 		= new LengthParameter("smaller size",myStartSize/20*12.5,[120.0,1.0])
+		CSGDatabase.addParameterListener(size.getName(),this);
+		CSGDatabase.addParameterListener(smallerSize.getName(),this);
 		// force a value to override the database loaded value
 		smallerSize.setMM(size.getMM()/20*12.5);
 		// Create a cube
@@ -156,8 +158,6 @@ class SampleMaker implements IParameterChanged{//collection of parts
 				makeSamples().get(myIndex)
 			})
 			.setParameter(size)
-
-			
 		}
 		loading=false;
 		return parts
@@ -169,16 +169,16 @@ class SampleMaker implements IParameterChanged{//collection of parts
 	 */
 	 HashMap<String,String> lastValue = new HashMap<>()
 	public void parameterChanged(String name, Parameter p){
-		if(p.getStrValue()==null&& p.getValue()==null)
-			return
+		//if(p.getStrValue()==null&& p.getValue()==null)
+		//	return
 		if(loading)
 			return
-		if(lastValue.get(name)!=null )
-			if(p.getStrValue().contains(lastValue.get(name)))
-				return
+		//if(lastValue.get(name)!=null )
+		//	if(p.getStrValue().contains(lastValue.get(name)))
+		//		return
 		
 		lastValue.put(name,p.getStrValue())
-		println "CHANGED: "+name+" to "+p.getStrValue()+" "+p.getValue()
+		println "CHANGED: "+name
 		parts=null
 	}
 }
