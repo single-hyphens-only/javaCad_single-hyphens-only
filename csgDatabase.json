@@ -1,4 +1,12 @@
 {
+  "Bolt Hole Facet Count": {
+    "name": "Bolt Hole Facet Count",
+    "options": [
+      "40",
+      "10"
+    ],
+    "value": 10000
+  },
   "microMetalMotor Default": {
     "name": "microMetalMotor Default",
     "options": [
@@ -224,6 +232,16 @@
       "Steel 5x5"
     ],
     "strValue": "Aluminum 1x10"
+  },
+  "IndMotor Default": {
+    "options2": [
+      "sn"
+    ],
+    "name": "IndMotor Default",
+    "options": [
+      "sn"
+    ],
+    "strValue": "sn"
   },
   "vexLchannel Default": {
     "name": "vexLchannel Default",
