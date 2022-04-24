@@ -138,6 +138,7 @@ class SampleMaker implements IParameterChanged{//collection of parts
 											.toYMin()
 											.movey(lastPart.getMaxY()+5)
 						CSGDatabase.addParameterListener(typParam.getName(),this);
+						vitaminFromScript.setName("typParam.getStrValue()")
 						numVits++;		
 						if(vitaminFromScript!=null){
 							parts.add(vitaminFromScript)
