@@ -167,6 +167,7 @@ class SampleMaker implements IParameterChanged{//collection of parts
 		parts.add(roundedCube.movex(size.getMM()*8))
 		for(int i=0;i<parts.size();i++){
 			CSG part=parts.get(i)
+			part.setName("SamplePart-"+i)
 			int myIndex=i;
 			part.setRegenerate({ 
 				makeSamples().get(myIndex)
