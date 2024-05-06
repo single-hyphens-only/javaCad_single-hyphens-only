@@ -20,8 +20,9 @@ class SampleMaker implements IParameterChanged{//collection of parts
 			return parts
 		}
 		loading=true;
-		double myStartSize = 40;
+		double myStartSize = 20;
 		LengthParameter size 		= new LengthParameter("size",myStartSize,[120.0,1.0])
+		size.setMM(20)
 		LengthParameter smallerSize 		= new LengthParameter("smaller size",myStartSize/20*12.5,[120.0,1.0])
 		CSGDatabase.addParameterListener(size.getName(),this);
 		CSGDatabase.addParameterListener(smallerSize.getName(),this);
